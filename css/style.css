@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --cor-branca: white;
+    --cor-roxa: rgb(81, 7, 150);
+}
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--cor-branca);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+/* Estilos dos Cards */
+.container__produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.produtos__card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 200px;
+    padding: 10px 20px;
+
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, 0.733);
+    background-color: var(--cor-roxa);
+}
+
+.produtos__img {
+    flex: 1;
+}
+
+.produtos__img img {
+    max-width: 100%;
+    box-shadow: 2px 3px 1px var(--cor-branca);
+    border-radius: 10px;
+}
+
+
+/* Estilos do Formulário */
+/* .container__form {
+    flex: 1 50%;
+} */
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form label {
+    color: black;
+}
+
+.form input {
+    width: 300px;
+    padding: 5px 5px;
+}
+
+.form .btn {
+    width: 100px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+/* Input number sem as flechas */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

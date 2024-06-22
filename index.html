@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="author" content="Miguel Santos">
+        <meta name="description" content="Alura Geek">
+
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/6786615f2b.js" crossorigin="anonymous"></script>
+
+        <title>Alura Geek</title>
+    </head>
+    <body>
+        
+        <main class="container">
+            <div id="produtos" class="container__produtos">
+                <div class="produtos__card">
+                    <div class="produtos__img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpagLijElVXaVYJs_KpU23FF9Cf0epr7jUHA&s" alt="Boneco Roblox dançando!">
+                    </div>
+                    <div class="produtos__descricao">
+                        <p>Max Steel</p>
+                        <p>$ 67,99</p>
+                    </div>
+                </div><!--produtos__card-->
+                <div class="produtos__card">
+                    <div class="produtos__img">
+                        <img src="https://play-lh.googleusercontent.com/h3e0LxGnNGPjKM8ZOpynORjJDZ9Xl5jLxyu1OZIQMtiqpBtX0fZI-oT-IhujIFLZkq8=w526-h296-rw" alt="Boneco Roblox dançando!">
+                    </div>
+                    <div class="produtos__descricao">
+                        <p>Max Steel</p>
+                        <p>$ 67,99</p>
+                    </div>
+                </div><!--produtos__card--><div class="produtos__card">
+                    <div class="produtos__img">
+                        <img src="assets/aoi.png" alt="Boneco Roblox dançando!">
+                    </div>
+                    <div class="produtos__descricao">
+                        <p>Max Steel</p>
+                        <p>$ 67,99</p>
+                    </div>
+                </div><!--produtos__card-->
+            </div><!--container__produtos-->
+
+            <div class="container__form">
+                <form class="form" data-formulario>
+                    <label for="nome">Insira o Nome:</label>
+                    <input type="text" id="nome" name="nome" value="">
+
+                    <label for="preco">Insira o preço:</label>
+                    <input type="number" step="any" id="preco" name="preco" value="">
+
+                    <label for="url">Insira a URL da imagem:</label>
+                    <input type="url" id="url" name="url" value="">
+
+                    <input type="submit" id="submit" class="btn">
+                </form>    
+            </div>
+        </main>
+
+        <script src="script/script.js"></script>
+        <script src="script/cria-produtos;.js" type="module"></script>
+        <script src="script/envia-produtos.js" type="module"></script>
+    </body>
+</html>

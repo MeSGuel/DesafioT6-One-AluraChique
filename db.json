@@ -1,0 +1,16 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Mistiquer",
+      "preco": "$ 54,99",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgaqd1HDO1oIq6cU4gfaH6n3biedzL_F-Zw&s"
+    },
+    {
+      "nome": "Max Steel",
+      "preco": "$ 32.55",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpagLijElVXaVYJs_KpU23FF9Cf0epr7jUHA&s",
+      "id": "o0dO4xI"
+    }
+  ]
+}

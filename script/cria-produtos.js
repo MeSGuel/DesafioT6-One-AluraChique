@@ -1,9 +1,11 @@
-export async function criaProdutos(nome, preco, imagem) {
+export async function criaProdutos(e, nome, preco, imagem) {
+    e.preventDefault();
+    
     try {
         const postProdutos = await fetch("http://localhost:3000/produtos", {
             method: "POST",
             headers: {
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 nome: nome,

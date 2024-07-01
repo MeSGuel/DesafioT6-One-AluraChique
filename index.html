@@ -6,67 +6,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="author" content="Miguel Santos">
-        <meta name="description" content="Alura Geek">
+        <meta name="description" content="Alura Geek, loja de livros nerds!">
 
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/6786615f2b.js" crossorigin="anonymous"></script>
 
         <title>Alura Geek</title>
     </head>
-    <body>
+    <body data-cenario="claro">
         
-        <main class="container">
-            <div id="produtos" class="container__produtos">
-                <div class="produtos__card">
-                    <div class="produtos__img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpagLijElVXaVYJs_KpU23FF9Cf0epr7jUHA&s" alt="Boneco Roblox dançando!">
-                    </div>
-                    <div class="produtos__descricao">
-                        <p>Max Steel</p>
-                        <p>$ 67,99</p>
-                    </div>
-                </div><!--produtos__card-->
-                <div class="produtos__card">
-                    <div class="produtos__img">
-                        <img src="https://play-lh.googleusercontent.com/h3e0LxGnNGPjKM8ZOpynORjJDZ9Xl5jLxyu1OZIQMtiqpBtX0fZI-oT-IhujIFLZkq8=w526-h296-rw" alt="Boneco Roblox dançando!">
-                    </div>
-                    <div class="produtos__descricao">
-                        <p>Max Steel</p>
-                        <p>$ 67,99</p>
-                    </div>
-                </div><!--produtos__card--><div class="produtos__card">
-                    <div class="produtos__img">
-                        <img src="assets/aoi.png" alt="Boneco Roblox dançando!">
-                    </div>
-                    <div class="produtos__descricao">
-                        <p>Max Steel</p>
-                        <p>$ 67,99</p>
-                    </div>
-                </div><!--produtos__card-->
-            </div><!--container__produtos-->
+        <div class="stardust stardust--toggle" id="star"></div>
+        <header class="cabecalho">
+            <h1>Alura Chique <span class="geek">geek</span></h1>
+            <p>Um lugar onde seus produtos são armazenados em artigos de luxo.</p>
 
-            <div class="container__form">
-                <form class="form" id="formulario" data-formulario>
-                    <label for="nome">Insira o Nome:</label>
-                    <input type="text" id="nome" name="nome" value="">
+            <p class="dica">Aperte na estrela para mudar de cenário!</p>
+        </header>
 
-                    <label for="preco">Insira o preço:</label>
-                    <input type="number" step="any" id="preco" name="preco" value="">
+        <main class="artigos-de-luxo">
+            <h2>Artigos de Luxo</h2>
 
-                    <label for="url">Insira a URL da imagem:</label>
-                    <input type="url" id="url" name="url" value="">
-
-                    <input type="submit" id="submit" class="btn">
-                </form>    
+            <div class="botoes-de-acao">
+                <button class="btn-add" id="btn-add">Adicionar Produtos</button>
+                <button class="btn-del" id="btn-del">Deletar Todos</button>
             </div>
+
+            <section class="container-form">
+                <form action="" id="form">
+                    <div class="inputs input-titulo">
+                        <label for="titulo">Insira o Título do seu produto.</label>
+                        <input required type="text" name="titulo" id="titulo" minlength="2" maxlength="50">
+                    </div>
+
+                    <div class="inputs input-preco">
+                        <label for="preco">Insira o preço do seu produto.</label>
+                        <input required type="number" name="preco" id="preco" min="100" max="100000">
+                    </div>
+
+                    <input type="submit" name="submit" id="submit" value="Adicionar">
+                </form>
+            </section>
+
+            <section class="container-cardluxo">
+                <div class="container__card--flex">
+                    <div class="cardchild">
+
+                    </div>
+                </div>
+            </section>
         </main>
 
-        
 
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="script/pega-produtos.js" type="module"></script>
-        <script src="script/cria-produtos.js" type="module"></script>
-        <script src="script/envia-produtos.js" type="module"></script>
-        <script src="script/exibir-na-tela.js" type="module"></script>
+        <script src="script/estrelas.js"></script>
     </body>
 </html>

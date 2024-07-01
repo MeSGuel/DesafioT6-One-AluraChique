@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+:root{
+    --tamanho-borda: 30px;
+    --cor-borda: #c5c2bd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: rgb(240, 243, 237); */
+    background-color: #d6d6eb;
+    height: 100vh;
+    padding: 30px 250px;
+}
+
+
+/* Estilos Extras */
+.oneBit:hover {
+    transform: rotateY(-30deg);
+    box-shadow: 10px 1px 2px rgba(0, 0, 0, 0.192);
+} 
+
+.abrir {
+    transform: rotateY(-150deg);
+    box-shadow: 10px 1px 2px rgba(0, 0, 0, 0.192);
+}
+
+
+.visibilidade {
+    visibility: hidden;
+}
+
+
+/* Estilos das Capasgeeks */
+.capageek {
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: 300px;
+
+    transform-style: preserve-3d;
+    transform: perspective(1500px);
+
+    /* box-shadow: inset 0px 0px 1px 5px #404055; */
+    border-start-end-radius: 12px;
+    background-color: #313141;
+}
+
+.capageek::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    padding: 0 2px;
+    box-shadow: 2px 1px 9px rgba(0, 0, 0, 0.808);
+    background-color: #272931;
+}
+
+
+/* Estilos para a Capa */
+.capa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    transform-origin: left;
+    padding: 10px;
+    transition: all 0.2s ease;
+    background-color: #2e303b;
+}
+
+.capa::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 95%;
+
+    width: 15px;
+    height: 100px;
+    transform: rotateY(190deg);
+    background-color: #e08e8ef3;
+    box-shadow: -3px 1px 1px rgba(245, 165, 165, 0.836);
+}
+
+.capa__titulo h3{
+    font-weight: 500;
+    color: white;
+    font-size: 25px;
+}
+
+.capa__titulo .div {
+    width: 100%;
+    margin-top: 10px;
+    padding: 1px;
+    background-color: #555869;
+}
+
+.capa__geek-money {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.capa__geek-money p {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0px 3px 2px #5558697a;
+}
+
+
+/* Estilo para o CD */
+.capageek__cd {
+    padding: 15px;
+}
+
+.cd {
+    position: relative;
+    height: 270px;
+    border: 4px dashed white;
+    border-start-end-radius: 12px;
+    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.438);
+}
+
+.cd img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-start-end-radius: 12px;
+    object-fit: cover;
+}

@@ -1,94 +1,325 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-:root {
-    --cor-branca: white;
-    --cor-roxa: rgb(81, 7, 150);
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
-*, 
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+/* Root para os CSS Shapes */
+:root {
+    --d: 3px;
+    --s: 20px;
 }
 
 body {
-    font-family: "IBM Plex Mono", monospace;
-    color: var(--cor-branca);
+    /* font-family: "IBM Plex Mono", monospace; */
+    font-family: "Playwrite IT Moderna", cursive;
+    height: 100vh;
 }
 
-.container {
+
+/* Estilos Globais */
+[data-cenario='escuro'] {
+    --bg: linear-gradient(180deg, rgba(35,29,46,1) 0%, rgba(35,29,46,1) 51%,
+     rgba(35,29,46,1) 81%, rgba(55,48,75,1) 100%); 
+    --bg-luxo: rgb(55, 48, 75);
+    --star-bg: rgb(235, 238, 64);
+
+    --font-color: white;
+    --text-shadow: 1px 6px 1px rgba(0, 0, 0, 0.185);
+    --argola-color: rgba(255, 255, 255, 0.288);
+    
+    --button-color: rgb(92, 91, 136);
+    --hover-btn-color: rgb(142, 138, 177);
+    --active-btn-color: rgb(87, 71, 177);
+}
+
+[data-cenario='claro'] {
+    --bg: linear-gradient(180deg, rgba(167,244,245,1) 0%, rgba(167,244,245,1) 51%, rgba(167,244,245,1) 75%, rgba(203,245,245,1) 100%);;
+    --bg-luxo: rgb(203, 245, 245);
+    --stardust-bg: rgb(241, 230, 65);
+
+    --font-color: rgba(33, 45, 58, 0.829);
+    --text-shadow: 3px 5px 1px rgba(0, 0, 0, 0.185);
+    --argola-color: rgba(16, 81, 124, 0.288);
+
+    --button-color: rgb(191, 236, 236);
+    --active-btn-color: rgb(129, 195, 233);
+    --hover-btn-color: rgb(198, 216, 240);
+}
+
+p, h1, h2, span, button, label, input[type='submit'] {
+    color: var(--font-color);
+}
+
+
+/* Cabeçalho */
+.cabecalho {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-
-/* Estilos dos Cards */
-.container__produtos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-}
-
-.produtos__card {
-    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 5px;
+    gap: 40px;
 
-    width: 200px;
-    padding: 10px 20px;
-
-    border: 2px solid black;
-    border-radius: 4px;
-    box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, 0.733);
-    background-color: var(--cor-roxa);
+    height: 100vh;
+    background: var(--bg);
 }
 
-.produtos__img {
-    flex: 1;
-}
-
-.produtos__img img {
-    max-width: 100%;
-    box-shadow: 2px 3px 1px var(--cor-branca);
-    border-radius: 10px;
-}
-
-
-/* Estilos do Formulário */
-/* .container__form {
-    flex: 1 50%;
-} */
-
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form label {
-    color: black;
-}
-
-.form input {
-    width: 300px;
-    padding: 5px 5px;
-}
-
-.form .btn {
-    width: 100px;
-    align-self: flex-end;
+.stardust {
+    position: fixed;
+    z-index: 99;
+    top: 35px;
+    left: 35px;    
     cursor: pointer;
 }
 
-/* Input number sem as flechas */
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+.star--toggle {
+    animation: star 1.3s ease-in-out;
+    background-color: var(--star-bg);
+
+    width: 100px; 
+    aspect-ratio: 1;
+    clip-path: polygon(100% 50%,69.42% 64.11%,65.45% 97.55%,42.58% 72.83%,9.55% 79.39%,26% 50%,9.55% 20.61%,42.58% 27.17%,65.45% 2.45%,69.42% 35.89%);
+}
+
+.stardust--toggle {
+    animation: stardust 1.3s ease-in-out;
+    background-color: var(--stardust-bg);
+
+    width: 100px; 
+    aspect-ratio: 1;
+    clip-path: polygon(95.24% 71.29%,72.91% 69.36%,78.54% 91.06%,60.16% 78.23%,54.18% 99.82%,44.69% 79.53%,28.71% 95.24%,30.64% 72.91%,8.94% 78.54%,21.77% 60.16%,0.18% 54.18%,20.47% 44.69%,4.76% 28.71%,27.09% 30.64%,21.46% 8.94%,39.84% 21.77%,45.82% 0.18%,55.31% 20.47%,71.29% 4.76%,69.36% 27.09%,91.06% 21.46%,78.23% 39.84%,99.82% 45.82%,79.53% 55.31%);
+}
+
+@keyframes star {
+    0% {
+        background-color: var(--star-bg);
+        transform: rotate(0deg);
+    }
+
+    60% {
+        transform: rotate(-380deg);
+    }
+
+    80% {
+        transform: rotate(-380deg);
+    }
+
+    100% {
+        background-color: var(--star-bg);
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes stardust {
+    0% {
+        background-color: var(--stardust-bg);
+        transform: rotate(0deg);
+    }
+
+    60% {
+        transform: rotate(380deg);
+    }
+
+    80% {
+        transform: rotate(380deg);
+    }
+
+    100% {
+        background-color: var(--stardust-bg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Cabeçalho Texto */
+.cabecalho h1 {
+    position: relative;
+    font-size: 6em;
+    font-weight: 800;
+    letter-spacing: 10px;
+    text-shadow: var(--text-shadow);
+}
+
+.cabecalho h1::before {
+    content: "";
+    position: absolute;
+    left: 749px;
+    top: 70px;
+
+    padding: 20px;
+    border-radius: 100%;
+    border: 1px solid var(--argola-color);
+}
+
+.cabecalho span {
+    position: absolute;
+    z-index: 1;
+    top: 126px;
+    left: 798px;
+    transform: rotate(50deg);
+
+    color: white;
+    font-weight: 200;
+    letter-spacing: 4px;
+    font-size: 15px;
+    text-shadow: 0 0 0;
+}
+
+.cabecalho h1::after {
+    content: '';
+    position: absolute;
+    left: 770px;
+    top: 120px;
+
+    height: 30px;
+    transform: rotate(-134deg);
+    line-height: 1.8;
+    padding-inline: calc(var(--s) + .3em);
+    clip-path: polygon(0 0,calc(100% - var(--s)) 0, 100% 50%,
+    calc(100% - var(--s)) 100%, 0 100%,var(--s) 50%);
+    background: #fa5858;
+    width: fit-content;
+}
+
+.cabecalho p {
+    letter-spacing: 2px;
+}
+
+
+.cabecalho .dica {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    letter-spacing: 3px;
+    text-decoration: underline var(--font-color);
+}
+
+
+/* Seção Artigo de Luxo */
+.artigos-de-luxo {
+    padding: 150px 20px 0 20px;
+    background-color: var(--bg-luxo);
+}
+
+.artigos-de-luxo h2 {
+    text-align: center;
+    margin: 0 auto 100px auto;
+    width: 400px;
+
+    font-size: 3em;
+    border-bottom: 2px solid var(--font-color);
+    transition: 0.3s;
+}
+
+.artigos-de-luxo h2:hover {
+    width: 420px;
+}
+
+.botoes-de-acao {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.botoes-de-acao button {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    border: none;
+    background-color: var(--button-color);
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.493);
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.1s;
+}
+
+.botoes-de-acao button:hover {
+    background-color: var(--hover-btn-color);
+}
+
+.botoes-de-acao button:active {
+    background-color: var(--active-btn-color);
+    box-shadow: inset 1px 1px 1px 2px rgba(0, 0, 0, 0.493);
+    font-size: 19px;
+}
+
+
+/* Estilos do Formulario */
+.container-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.container-form form {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputs label {
+    font-size: 20px;
+}
+
+.inputs input {
+    width: 400px;
+    padding: 10px 15px;
+
+    border-radius: 10px;
+    border: 2px dashed rgba(37, 35, 54, 0.685);
+    outline: 0;
+
+    font-size: 1em;
+    color: black;
+    font-family: "Playwrite IT Moderna", cursive;
+}
+
+input[type='submit'] {
+    width: 60%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 12px;
+    border-radius: 2px;
+
+    font-family: "Playwrite IT Moderna", cursive;
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-size: 22px;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: 0.2s;
+
+    aspect-ratio: 1;
+    border: solid #00000000;
+    border-width: 0 var(--d) var(--d) 0;
+    clip-path: polygon(0 0,calc(100% - var(--d)) 0,100% var(--d),100% 100%,var(--d) 100%,0 calc(100% - var(--d)));
+    background: conic-gradient(at calc(100% - var(--d)) 
+    calc(100% - var(--d)), #0004 37.5%, #0008 0 75%, #0000 0) 
+    border-box var(--button-color);
+}
+
+input[type='submit']:hover {
+    background-color: var(--hover-btn-color);
+}
+
+input[type='submit']:active {
+    background-color: var(--active-btn-color);
+    width: 63%;
+    font-size: 20px;
+}
+
+/* Seção Cards de Luxo */
+.container-cardluxo {
+    padding-top: 1200px;
 }

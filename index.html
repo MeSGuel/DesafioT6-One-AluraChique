@@ -10,29 +10,37 @@
 
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/capaluxo.css">
         <script src="https://kit.fontawesome.com/6786615f2b.js" crossorigin="anonymous"></script>
 
         <title>Alura Geek</title>
     </head>
     <body data-cenario="claro">
-        
+
+        <!-- Cabeçalho -->
         <div class="stardust stardust--toggle" id="star"></div>
         <header class="cabecalho">
             <h1>Alura Chique <span class="geek">geek</span></h1>
             <p>Um lugar onde seus produtos são armazenados em artigos de luxo.</p>
 
-            <p class="dica">Aperte na estrela para mudar de cenário!</p>
+            <p class="dica">Aperte na estrela para mudar a aparência!</p>
         </header>
 
+        <!-- Artigos de Luxo -->
         <main class="artigos-de-luxo">
-            <h2>Artigos de Luxo</h2>
+            <h2 class="titulo-artigo hidden-scroll" id="titulo-artigo">Artigos de Luxo</h2>
 
             <div class="botoes-de-acao">
                 <button class="btn-add" id="btn-add">Adicionar Produtos</button>
-                <button class="btn-del" id="btn-del">Deletar Todos</button>
+                <button class="btn-del" id="btn-del">Deletar Todos Artigos</button>
             </div>
 
-            <section class="container-form">
+            <div class="hipo" id="hipo">
+                <i class="fa-regular fa-gem"></i>
+            </div>
+
+            <!-- Seção Formulário -->
+            <section class="container-form" id="container-form">                
                 <form action="" id="form">
                     <div class="inputs input-titulo">
                         <label for="titulo">Insira o Título do seu produto.</label>
@@ -40,24 +48,102 @@
                     </div>
 
                     <div class="inputs input-preco">
-                        <label for="preco">Insira o preço do seu produto.</label>
+                        <label for="preco">Insira o Preço do seu produto.</label>
                         <input required type="number" name="preco" id="preco" min="100" max="100000">
+                    </div>
+
+                    <div class="inputs input-url">
+                        <label for="url">Insira o endereço da Imagem do seu produto.</label>
+                        <input required type="url" name="url" id="url">
                     </div>
 
                     <input type="submit" name="submit" id="submit" value="Adicionar">
                 </form>
             </section>
 
+            <!-- Seção Cards de Luxo -->
             <section class="container-cardluxo">
-                <div class="container__card--flex">
-                    <div class="cardchild">
+                <p class="dica-delete">Segure no artigo para exibir o botão "Delete".</p>
 
+                <div class="container__card--flex">
+                    <div class="cardchild" id="cardchild">
+                        <button class="delete-card" id="delete-card" data-id="">Deletar</button>
+
+                        <div class="cardluxo">
+                            <div class="capa oneBit" id="capa">
+                                <div class="capa__titulo" id="capa-titulo">
+                                    <h3>Gameboy Game: Adventure Boy</h3>
+                                    <div class="div"></div>
+                                </div>
+                    
+                                <div class="capa__money" id="capa-money">
+                                    <p>AluraGeek</p>
+                                    <p class="money">R$ 100.000</p>
+                                </div>
+                            </div>
+                    
+                            <div class="cardluxo__artigo-luxo">
+                                <div class="artigo"><img src="assets/aoi.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cardchild" id="cardchild">
+                        <button class="delete-card" id="delete-card" data-id="">Deletar</button>
+
+                        <div class="cardluxo">
+                            <div class="capa oneBit" id="capa">
+                                <div class="capa__titulo" id="capa-titulo">
+                                    <h3>Gameboy Game: Adventure Boy</h3>
+                                    <div class="div"></div>
+                                </div>
+                    
+                                <div class="capa__money" id="capa-money">
+                                    <p>AluraGeek</p>
+                                    <p class="money">R$ 1.000</p>
+                                </div>
+                            </div>
+                    
+                            <div class="cardluxo__artigo-luxo">
+                                <div class="artigo"><img src="assets/aoi.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cardchild" id="cardchild">
+                        <button class="delete-card" id="delete-card" data-id="">Deletar</button>
+
+                        <div class="cardluxo">
+                            <div class="capa oneBit" id="capa">
+                                <div class="capa__titulo" id="capa-titulo">
+                                    <h3>Gameboy Game: Adventure Boy</h3>
+                                    <div class="div"></div>
+                                </div>
+                    
+                                <div class="capa__money" id="capa-money">
+                                    <p>AluraGeek</p>
+                                    <p class="money">R$ 1.000</p>
+                                </div>
+                            </div>
+                    
+                            <div class="cardluxo__artigo-luxo">
+                                <div class="artigo"><img src="assets/aoi.png" alt=""></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
+        <!-- Rodapé -->
+        <footer>
+            <p>Miguel</p>
+        </footer>
+
 
         <script src="script/estrelas.js"></script>
+        <script src="script/show-form.js"></script>
+        <script src="script/capaluxo.js"></script>
+        <script src="script/scroll.js"></script>
     </body>
 </html>

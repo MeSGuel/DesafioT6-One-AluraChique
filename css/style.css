@@ -16,14 +16,28 @@ body {
     /* font-family: "IBM Plex Mono", monospace; */
     font-family: "Playwrite IT Moderna", cursive;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 
-/* Estilos Globais */
+/* Estilos "Scroll Animation" */
+.show-scroll {
+    transform: translateX(0);
+    transition: all 1s 0.1s;
+    opacity: 1;
+}
+
+.hidden-scroll {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 2s 0.5s;
+}
+
+/* Estilos de troca de aparência */
 [data-cenario='escuro'] {
     --bg: linear-gradient(180deg, rgba(35,29,46,1) 0%, rgba(35,29,46,1) 51%,
      rgba(35,29,46,1) 81%, rgba(55,48,75,1) 100%); 
-    --bg-luxo: rgb(55, 48, 75);
+    --bg-luxo: linear-gradient(180deg, rgba(55,48,75,1) 0%, rgba(55,48,75,1) 51%, rgba(55,48,75,1) 73%, rgba(255,255,255,1) 100%);
     --star-bg: rgb(235, 238, 64);
 
     --font-color: white;
@@ -36,8 +50,8 @@ body {
 }
 
 [data-cenario='claro'] {
-    --bg: linear-gradient(180deg, rgba(167,244,245,1) 0%, rgba(167,244,245,1) 51%, rgba(167,244,245,1) 75%, rgba(203,245,245,1) 100%);;
-    --bg-luxo: rgb(203, 245, 245);
+    --bg: linear-gradient(180deg, rgba(167,244,245,1) 0%, rgba(167,244,245,1) 51%, rgba(167,244,245,1) 75%, rgba(203,245,245,1) 100%);
+    --bg-luxo: linear-gradient(180deg, rgba(203,245,245,1) 0%, rgba(203,245,245,1) 51%, rgba(203,245,245,1) 73%, rgba(255,255,255,1) 100%);
     --stardust-bg: rgb(241, 230, 65);
 
     --font-color: rgba(33, 45, 58, 0.829);
@@ -46,7 +60,7 @@ body {
 
     --button-color: rgb(191, 236, 236);
     --active-btn-color: rgb(129, 195, 233);
-    --hover-btn-color: rgb(198, 216, 240);
+    --hover-btn-color: rgb(198, 216, 240); 
 }
 
 p, h1, h2, span, button, label, input[type='submit'] {
@@ -61,13 +75,14 @@ p, h1, h2, span, button, label, input[type='submit'] {
     justify-content: center;
     flex-direction: column;
     gap: 40px;
+    padding: 0 30px;
 
     height: 100vh;
     background: var(--bg);
 }
 
 .stardust {
-    position: fixed;
+    position: absolute;
     z-index: 99;
     top: 35px;
     left: 35px;    
@@ -89,7 +104,7 @@ p, h1, h2, span, button, label, input[type='submit'] {
 
     width: 100px; 
     aspect-ratio: 1;
-    clip-path: polygon(95.24% 71.29%,72.91% 69.36%,78.54% 91.06%,60.16% 78.23%,54.18% 99.82%,44.69% 79.53%,28.71% 95.24%,30.64% 72.91%,8.94% 78.54%,21.77% 60.16%,0.18% 54.18%,20.47% 44.69%,4.76% 28.71%,27.09% 30.64%,21.46% 8.94%,39.84% 21.77%,45.82% 0.18%,55.31% 20.47%,71.29% 4.76%,69.36% 27.09%,91.06% 21.46%,78.23% 39.84%,99.82% 45.82%,79.53% 55.31%);
+    clip-path: polygon(95.24% 71.29%,72.91% 69.36%,78.54% 91.06%,60.16% 78.23%,54.18% 99.82%,44.69% 79.53%,28.71% 95.24%,30.64% 72.91%,8.94% 78.54%,21.77% 60.16%,0.18% 54.18%,20.47% 44.69%,4.76% 28.71%,27.09% 30.64%,21.46% 8.94%,39.84% 21.77%,45.82% 0.18%,55.31% 20.47%,71.29% 4.76%,69.36% 27.09%,91.06% 21.46%,78.23% 39.84%,99.82% 45.82%,79.53% 55.31%); 
 }
 
 @keyframes star {
@@ -136,6 +151,7 @@ p, h1, h2, span, button, label, input[type='submit'] {
 /* Cabeçalho Texto */
 .cabecalho h1 {
     position: relative;
+    text-align: center;
     font-size: 6em;
     font-weight: 800;
     letter-spacing: 10px;
@@ -185,6 +201,8 @@ p, h1, h2, span, button, label, input[type='submit'] {
 
 .cabecalho p {
     letter-spacing: 2px;
+    line-height: 24px;
+    text-align: center;
 }
 
 
@@ -193,14 +211,33 @@ p, h1, h2, span, button, label, input[type='submit'] {
     bottom: 15px;
     left: 10px;
     letter-spacing: 3px;
+    line-height: 28px;
     text-decoration: underline var(--font-color);
 }
 
 
 /* Seção Artigo de Luxo */
 .artigos-de-luxo {
+    position: relative;
     padding: 150px 20px 0 20px;
-    background-color: var(--bg-luxo);
+    background: var(--bg-luxo);
+}
+
+.hipo{
+    position: absolute;
+    left: 50%;
+    top: 480px;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.hipo i {
+    font-size: 10em;
+    color: #50666673;
+}
+
+.hidden-hipo {
+    left: 180%;
 }
 
 .artigos-de-luxo h2 {
@@ -210,17 +247,13 @@ p, h1, h2, span, button, label, input[type='submit'] {
 
     font-size: 3em;
     border-bottom: 2px solid var(--font-color);
-    transition: 0.3s;
-}
-
-.artigos-de-luxo h2:hover {
-    width: 420px;
 }
 
 .botoes-de-acao {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .botoes-de-acao button {
@@ -235,7 +268,6 @@ p, h1, h2, span, button, label, input[type='submit'] {
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.493);
     border-radius: 10px;
     padding: 10px;
-    transition: 0.1s;
 }
 
 .botoes-de-acao button:hover {
@@ -248,17 +280,42 @@ p, h1, h2, span, button, label, input[type='submit'] {
     font-size: 19px;
 }
 
+.botoes-de-acao .btn-del {
+    position: relative;
+    left: -1300px;
+    transition: all 0.5s ease-in-out;
+}
+
+.botoes-de-acao .btn-del:active {
+    background-color: rgb(235, 117, 117);
+
+}
+
+.botoes-de-acao .show-btn {
+    left: 0;
+}
+
 
 /* Estilos do Formulario */
 .container-form {
+    position: relative;
+    left: -1350px;
     display: flex;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 30px;
+    /* padding: 30px 20px 0 20px; */
+    transition: all 0.8s ease-in-out;
+}
+
+.show-form {
+    left: 0px;
 }
 
 .container-form form {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -270,10 +327,10 @@ p, h1, h2, span, button, label, input[type='submit'] {
 
 .inputs label {
     font-size: 20px;
+    line-height: 30px;
 }
 
 .inputs input {
-    width: 400px;
     padding: 10px 15px;
 
     border-radius: 10px;
@@ -285,10 +342,13 @@ p, h1, h2, span, button, label, input[type='submit'] {
     font-family: "Playwrite IT Moderna", cursive;
 }
 
+.input-url {
+    flex: 2;
+}
+
 input[type='submit'] {
-    width: 60%;
+    flex: 1 100%;
     height: 50px;
-    margin: 0 auto;
     padding: 0 12px;
     border-radius: 2px;
 
@@ -319,7 +379,123 @@ input[type='submit']:active {
     font-size: 20px;
 }
 
-/* Seção Cards de Luxo */
-.container-cardluxo {
-    padding-top: 1200px;
+
+/* Estilos para o Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    color: black;
+}
+
+
+/* Tela Mobile */
+@media screen and (max-width: 1004px) {
+    .cabecalho h1::before,
+    .cabecalho h1::after {
+        visibility: hidden;
+    }
+
+    .geek {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .stardust {
+        left: 50%;  
+        transform: translateX(-50%);  
+    }
+
+    @keyframes star {
+        0% {
+            background-color: var(--star-bg);
+            transform: rotate(0deg) translate(-50%);
+        }
+    
+        60% {
+            transform: rotate(-380deg) translate(-50%);
+        }
+    
+        80% {
+            transform: rotate(-380deg) translate(-50%);
+        }
+    
+        100% {
+            background-color: var(--star-bg);
+            transform: rotate(-360deg) translate(-50%);
+        }
+    }
+    
+    @keyframes stardust {
+        0% {
+            background-color: var(--stardust-bg);
+            transform: rotate(0deg) translate(-50%);
+        }
+    
+        60% {
+            transform: rotate(380deg) translate(-50%);
+        }
+    
+        80% {
+            transform: rotate(380deg) translate(-50%);
+        }
+    
+        100% {
+            background-color: var(--stardust-bg);
+            transform: rotate(360deg) translate(-50%);
+        }
+    }
+    
+}
+
+@media screen and (max-width: 666px) {
+    .hipo {
+        top: 520px;
+    }
+
+    .hipo i {
+        font-size: 15em;
+    }
+}
+
+@media screen and (max-width: 422px) {
+    .hipo {
+        top: 548px;
+    }
+}
+
+@media screen and (max-width: 502px) {
+    .cabecalho h1 {
+        font-size: 5em;
+    }
+
+    .stardust {
+        left: 50%;    
+    }
+
+    .artigos-de-luxo h2 {
+        text-align: center;
+        margin: 0 auto 100px auto;
+        width: auto;
+    
+        font-size: 3em;
+    }
+    
+    .artigos-de-luxo h2:hover {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 382px) {
+    .cabecalho h1 {
+        font-size: 4em;
+    }
+
+    .cabecalho .dica {
+        left: 0px;
+    }
 }

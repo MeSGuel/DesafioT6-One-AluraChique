@@ -1,25 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-
-:root{
-    --tamanho-borda: 30px;
-    --cor-borda: #c5c2bd;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    /* background-color: rgb(240, 243, 237); */
-    background-color: #d6d6eb;
-    height: 100vh;
-    padding: 30px 250px;
-}
-
-
 /* Estilos Extras */
 .oneBit:hover {
     transform: rotateY(-30deg);
@@ -31,14 +9,44 @@ body {
     box-shadow: 10px 1px 2px rgba(0, 0, 0, 0.192);
 }
 
-
 .visibilidade {
     visibility: hidden;
 }
 
 
-/* Estilos das Capasgeeks */
-.capageek {
+/* Estilos Cards de Luxo */
+.container-cardluxo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 300px 20px;
+    margin-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.096);
+}
+
+.dica-delete {
+    padding-bottom: 80px;
+    display: none;
+    text-align: center;
+    line-height: 28px;
+    letter-spacing: 2px;
+    text-decoration: 1px underline var(--font-color);
+    color: var(--font-color);
+}
+
+.container__card--flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.cardchild {
+    position: relative;
+}
+
+.cardluxo {
     position: relative;
     z-index: 1;
     width: 200px;
@@ -52,7 +60,7 @@ body {
     background-color: #313141;
 }
 
-.capageek::before {
+.cardluxo::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -100,19 +108,19 @@ body {
 
 .capa__titulo .div {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 1px;
     background-color: #555869;
 }
 
-.capa__geek-money {
+.capa__money {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
 
-.capa__geek-money p {
+.capa__money p {
     color: white;
     font-weight: 700;
     letter-spacing: 2px;
@@ -120,12 +128,12 @@ body {
 }
 
 
-/* Estilo para o CD */
-.capageek__cd {
+/* Estilo para o artigo */
+.cardluxo__artigo-luxo {
     padding: 15px;
 }
 
-.cd {
+.cardluxo__artigo-luxo .artigo {
     position: relative;
     height: 270px;
     border: 4px dashed white;
@@ -133,10 +141,48 @@ body {
     box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.438);
 }
 
-.cd img {
+.cardluxo__artigo-luxo img {
     position: absolute;
     height: 100%;
     width: 100%;
     border-start-end-radius: 12px;
     object-fit: cover;
+}
+
+
+/* Estilos para o Botão Delete */
+.delete-card {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bolder;
+    border: 0;
+    box-shadow: 2px 2px 1px 2px rgba(252, 127, 127, 0.753);
+    color: white;
+    background-color: #ec7777;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.show-delete-card {
+    top: -30px;
+    left: 0px;
+}
+
+.delete-card:hover {
+    background-color: #ec5353;
+}
+
+.delete-card:active {
+    font-size: 13px;
+    background-color: #f83e3e;
+}
+
+@media screen and (max-width: 1010px) {
+    .dica-delete {
+        display: block;
+    }
 }

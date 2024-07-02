@@ -44,12 +44,15 @@
 
 .cardluxo__dica {
     padding-bottom: 80px;
-    display: none;
     text-align: center;
     line-height: 28px;
     letter-spacing: 2px;
     text-decoration: 1px underline var(--font-color);
     color: var(--font-color);
+}
+
+.cardluxo__dica-mobile {
+    display: none;
 }
 
 .container-cardfluxo {
@@ -202,7 +205,11 @@
 
 /* Responsivo para Telas menores */
 @media screen and (max-width: 1024px) {
-    .cardluxo__dica {
+    .cardluxo__dica-mobile {
         display: block;
+    }
+
+    .cardluxo__dica-pc {
+        display: none;
     }
 }

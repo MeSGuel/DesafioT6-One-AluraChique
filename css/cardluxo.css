@@ -16,6 +16,7 @@
 
 /* Estilos para Cards de Luxo */
 .container-artigos {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +24,22 @@
     padding: 40px 20px 300px 20px;
     margin-top: 20px;
     border-top: 2px solid rgba(0, 0, 0, 0.096);
+}
+
+.nothing-icon {
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+}
+
+.nothing-icon i {
+    font-size: 10em;
+    color: var(--icon-color);
+}
+
+.hidden-nothing-icon {
+    left: 180%;
 }
 
 .cardluxo__dica {
@@ -103,6 +120,7 @@
 .capa__titulo h3{
     font-weight: 500;
     color: white;
+    line-height: 35px;
     font-size: 25px;
 }
 
@@ -181,8 +199,10 @@
     background-color: #f83e3e;
 }
 
-@media screen and (max-width: 1010px) {
-    .dica-delete {
+
+/* Responsivo para Telas menores */
+@media screen and (max-width: 1024px) {
+    .cardluxo__dica {
         display: block;
     }
 }

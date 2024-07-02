@@ -8,7 +8,7 @@
         <meta name="author" content="Miguel Santos">
         <meta name="description" content="Alura Chique, o lugar dos Artigos de Luxo!">
 
-        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reset-style/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/cardluxo.css">
         <script src="https://kit.fontawesome.com/6786615f2b.js" crossorigin="anonymous"></script>
@@ -28,11 +28,13 @@
 
         <!-- Artigos de Luxo -->
         <main class="artigos-de-luxo">
-            <h2 class="titulo-artigo hidden-scroll" id="titulo-artigo">Artigos de Luxo</h2>
+            <div class="artigos-de-luxo__titulo">
+                <h2 class="titulo-artigo hidden-scroll" id="titulo-artigo">Artigos de Luxo</h2>
+                <p class="para-artigo hidden-scroll" id="para-artigo">Limite máximo de até 12 Artigos de Luxo</p>
+            </div>
 
-            <div class="botoes-de-acao">
+            <div class="container-btn">
                 <button class="btn-add" id="btn-add">Adicionar Produtos</button>
-                <button class="btn-del" id="btn-del">Deletar Todos Artigos</button>
             </div>
 
             <div class="diamond" id="diamond">
@@ -42,22 +44,22 @@
             <!-- Seção Formulário -->
             <section class="container-form" id="container-form">                
                 <form action="" id="form">
-                    <div class="inputs input-titulo">
+                    <fieldset class="inputs input-titulo">
                         <label for="titulo">Insira o Título do seu produto.</label>
                         <input required type="text" name="titulo" id="titulo" minlength="2" maxlength="50">
-                    </div>
+                    </fieldset>
 
-                    <div class="inputs input-preco">
+                    <fieldset class="inputs input-preco">
                         <label for="preco">Insira o Preço do seu produto.</label>
                         <input required type="number" name="preco" id="preco" min="100" max="100000000">
-                    </div>
+                    </fieldset>
 
-                    <div class="inputs input-imagem">
+                    <fieldset class="inputs input-imagem">
                         <label for="imagem">Insira o endereço da Imagem do seu produto.</label>
                         <input required type="url" name="imagem" id="imagem">
-                    </div>
+                    </fieldset>
 
-                    <input type="submit" name="submit" id="submit" value="Adicionar">
+                    <input type="submit" class="" name="submit" id="submit" value="Adicionar">
                 </form>
             </section>
 
@@ -65,22 +67,26 @@
             <section class="container-artigos">
                 <p class="cardluxo__dica">Segure no artigo para exibir o botão "Delete".</p>
 
+                <div class="nothing-icon" id="nothing-icon">
+                    <i class="fa-regular fa-gem"></i>
+                </div>
+
                 <div class="container-cardfluxo" id="container-cardfluxo">
-                    
                 </div>
             </section>
         </main>
 
         <!-- Rodapé -->
         <footer>
-            <p>Miguel</p>
+            <p>© 2024 Alura Chique. Desenvolvido por Miguel Santos T6 - One.</p>
+            <a href="https://github.com/MeSGuel" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </footer>
 
-
-        <script src="script/post-enviar.js" type="module"></script>
-        <script src="script/validation.js" type="module"></script>
-        <script src="script/get-exibi.js" type="module"></script>
-        <script src="script/delete-cards.js" type="module"></script>
+        <script src="script/request-script/connectaApi.js" type="module"></script>
+        <script src="script/request-script/validation.js" type="module"></script>
+        <script src="script/request-script/constructCard.js" type="module"></script>
         <script src="script/stars.js"></script>
         <script src="script/show-form.js"></script>
         <script src="script/capaluxo.js"></script>

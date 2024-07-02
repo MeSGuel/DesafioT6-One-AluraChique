@@ -1,8 +1,5 @@
 // Mostra o botão Delete
-function showBtnDelete(e, card) {
-    e.preventDefault();
-    e.stopPropagation();
-
+function showBtnDelete(card) {
     let botaoDelete = card.querySelector('#delete-card');
     containClasse = botaoDelete.classList.contains('show-delete-card');
 

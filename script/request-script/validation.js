@@ -1,14 +1,52 @@
-let regExrText = /[^a-zA-Z:&,.âêôÂÊÔéóáíÍÁÉÓàÀãõÃÕ 0-9]+/g;
-let regExrDinheiro = /\d?\d/gi;
+import { postProdutos } from "./connectaApi.js";
 
-export function validaTexto(valorText) {
-    let valorInput = valorText.value;
+const submit = document.getElementById('submit');
+const form = document.getElementById('form');
+
+form.addEventListener('invalid', e => {
+    form.style.backgroundColor = 'red';
+})
+
+const regExrText = /[^a-zA-Z:&,.âêôÂÊÔéóáíÍÁÉÓàÀãõÃÕ 0-9]+/g;
+const regExrDinheiro = /[^0-9]/g;
+
+let tituloInput = document.getElementById('titulo');
+let precoInput = document.getElementById('preco');
+let imagemInput = document.getElementById('imagem');
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    await postProdutos(tituloInput, precoInput, imagemInput);
+    location.reload();
+
+    tituloInput.value = '';
+    precoInput.value = '';
+    imagemInput.value = '';
+
+    tituloInput.focus();
+});
+
+
+// Funções de validações.
+export function validaTexto(tituloInput) {
+    let valorInput = tituloInput.value;
     let replaceValue = valorInput.replace(regExrText, "");
     
     return replaceValue;
 }
 
-export function validaDinheiro(valorPreco) {
+precoInput.addEventListener('blur', inputEmpty);
+function inputEmpty() {
+    let valorInput = precoInput.value;
+    let valorTrocado = valorInput.replace(regExrDinheiro, '');
+
+    precoInput.value = valorTrocado;
+    console.log('Valor trocado: ' + valorTrocado);
+}
+
+
+// Formata o preço dos Produtos
+export function formataPreco(valorPreco) {
     let precoTratado = parseFloat(valorPreco).toString();
 
     let numeroCortado;

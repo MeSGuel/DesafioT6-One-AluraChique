@@ -1,7 +1,6 @@
-const tituloArtigo = document.getElementById('titulo-artigo');
-const cardsDeLuxoScroll = document.querySelectorAll('#cardchild');
+let myObservation = new IntersectionObserver(entries => showHideElements(entries));
 
-let myObservation = new IntersectionObserver(entries => {
+function showHideElements(entries) {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             entry.target.classList.remove('hidden-scroll');
@@ -11,9 +10,4 @@ let myObservation = new IntersectionObserver(entries => {
             entry.target.classList.remove('show-scroll');
         }
     })
-})
-
-myObservation.observe(tituloArtigo);
-cardsDeLuxoScroll.forEach(card => {
-    myObservation.observe(card)
-})
+}

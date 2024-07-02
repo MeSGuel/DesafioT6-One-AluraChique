@@ -6,24 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="author" content="Miguel Santos">
-        <meta name="description" content="Alura Geek, loja de livros nerds!">
+        <meta name="description" content="Alura Chique, o lugar dos Artigos de Luxo!">
 
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/capaluxo.css">
+        <link rel="stylesheet" href="css/cardluxo.css">
         <script src="https://kit.fontawesome.com/6786615f2b.js" crossorigin="anonymous"></script>
 
-        <title>Alura Geek</title>
+        <title>Alura Chique</title>
     </head>
     <body data-cenario="claro">
 
         <!-- Cabeçalho -->
-        <div class="stardust stardust--toggle" id="star"></div>
+        <div class="star stardust--toggle" id="star"></div>
         <header class="cabecalho">
             <h1>Alura Chique <span class="geek">geek</span></h1>
             <p>Um lugar onde seus produtos são armazenados em artigos de luxo.</p>
 
-            <p class="dica">Aperte na estrela para mudar a aparência!</p>
+            <p class="cabecalho__dica">Aperte na estrela para mudar a aparência!</p>
         </header>
 
         <!-- Artigos de Luxo -->
@@ -35,7 +35,7 @@
                 <button class="btn-del" id="btn-del">Deletar Todos Artigos</button>
             </div>
 
-            <div class="hipo" id="hipo">
+            <div class="diamond" id="diamond">
                 <i class="fa-regular fa-gem"></i>
             </div>
 
@@ -49,12 +49,12 @@
 
                     <div class="inputs input-preco">
                         <label for="preco">Insira o Preço do seu produto.</label>
-                        <input required type="number" name="preco" id="preco" min="100" max="100000">
+                        <input required type="number" name="preco" id="preco" min="100" max="100000000">
                     </div>
 
-                    <div class="inputs input-url">
-                        <label for="url">Insira o endereço da Imagem do seu produto.</label>
-                        <input required type="url" name="url" id="url">
+                    <div class="inputs input-imagem">
+                        <label for="imagem">Insira o endereço da Imagem do seu produto.</label>
+                        <input required type="url" name="imagem" id="imagem">
                     </div>
 
                     <input type="submit" name="submit" id="submit" value="Adicionar">
@@ -62,31 +62,11 @@
             </section>
 
             <!-- Seção Cards de Luxo -->
-            <section class="container-cardluxo">
-                <p class="dica-delete">Segure no artigo para exibir o botão "Delete".</p>
+            <section class="container-artigos">
+                <p class="cardluxo__dica">Segure no artigo para exibir o botão "Delete".</p>
 
-                <div class="container__card--flex">
-                    <div class="cardchild" id="cardchild">
-                        <button class="delete-card" id="delete-card" data-id="">Deletar</button>
-
-                        <div class="cardluxo">
-                            <div class="capa oneBit" id="capa">
-                                <div class="capa__titulo" id="capa-titulo">
-                                    <h3>Gameboy Game: Adventure Boy</h3>
-                                    <div class="div"></div>
-                                </div>
+                <div class="container-cardfluxo" id="container-cardfluxo">
                     
-                                <div class="capa__money" id="capa-money">
-                                    <p>AluraGeek</p>
-                                    <p class="money">R$ 100.000</p>
-                                </div>
-                            </div>
-                    
-                            <div class="cardluxo__artigo-luxo">
-                                <div class="artigo"><img src="assets/aoi.png" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -97,7 +77,10 @@
         </footer>
 
 
+        <script src="script/post-enviar.js" type="module"></script>
         <script src="script/validation.js" type="module"></script>
+        <script src="script/get-exibi.js" type="module"></script>
+        <script src="script/delete-cards.js" type="module"></script>
         <script src="script/stars.js"></script>
         <script src="script/show-form.js"></script>
         <script src="script/capaluxo.js"></script>

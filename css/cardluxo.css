@@ -14,8 +14,8 @@
 }
 
 
-/* Estilos Cards de Luxo */
-.container-cardluxo {
+/* Estilos para Cards de Luxo */
+.container-artigos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +25,7 @@
     border-top: 2px solid rgba(0, 0, 0, 0.096);
 }
 
-.dica-delete {
+.cardluxo__dica {
     padding-bottom: 80px;
     display: none;
     text-align: center;
@@ -35,7 +35,7 @@
     color: var(--font-color);
 }
 
-.container__card--flex {
+.container-cardfluxo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -135,13 +135,13 @@
 
 .cardluxo__artigo-luxo .artigo {
     position: relative;
-    height: 270px;
+    height: 260px;
     border: 4px dashed white;
     border-start-end-radius: 12px;
     box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.438);
 }
 
-.cardluxo__artigo-luxo img {
+.artigo img {
     position: absolute;
     height: 100%;
     width: 100%;

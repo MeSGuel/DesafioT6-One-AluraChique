@@ -6,32 +6,6 @@
     box-sizing: border-box;
 }
 
-/* Root para os CSS Shapes */
-:root {
-    --d: 3px;
-    --s: 20px;
-}
-
-body {
-    /* font-family: "IBM Plex Mono", monospace; */
-    font-family: "Playwrite IT Moderna", cursive;
-    height: 100vh;
-    overflow-x: hidden;
-}
-
-
-/* Estilos "Scroll Animation" */
-.show-scroll {
-    transform: translateX(0);
-    transition: all 1s 0.1s;
-    opacity: 1;
-}
-
-.hidden-scroll {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: all 2s 0.5s;
-}
 
 /* Estilos de troca de aparência */
 [data-cenario='escuro'] {
@@ -65,8 +39,38 @@ body {
     --hover-btn-color: rgb(198, 216, 240); 
 }
 
+
+/* Root para os CSS Shapes */
+:root {
+    --d: 3px;
+    --s: 20px;
+}
+
+body {
+    /* font-family: "IBM Plex Mono", monospace; */
+    font-family: "Playwrite IT Moderna", cursive;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* Estilos Gerais */
 p, h1, h2, span, button, label, input[type='submit'] {
     color: var(--font-color);
+}
+
+
+/* Estilos para "Scroll Animation" */
+.show-scroll {
+    transform: translateX(0);
+    transition: all 1s 0.1s;
+    opacity: 1;
+}
+
+.hidden-scroll {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 2s 0.5s;
 }
 
 
@@ -83,7 +87,7 @@ p, h1, h2, span, button, label, input[type='submit'] {
     background: var(--bg);
 }
 
-.stardust {
+.star {
     position: absolute;
     z-index: 99;
     top: 35px;
@@ -171,7 +175,7 @@ p, h1, h2, span, button, label, input[type='submit'] {
     border: 1px solid var(--argola-color);
 }
 
-.cabecalho span {
+.cabecalho .geek {
     position: absolute;
     z-index: 1;
     top: 126px;
@@ -208,7 +212,7 @@ p, h1, h2, span, button, label, input[type='submit'] {
 }
 
 
-.cabecalho .dica {
+.cabecalho__dica {
     position: absolute;
     bottom: 15px;
     left: 10px;
@@ -225,7 +229,16 @@ p, h1, h2, span, button, label, input[type='submit'] {
     background: var(--bg-luxo);
 }
 
-.hipo{
+.titulo-artigo {
+    text-align: center;
+    margin: 0 auto 100px auto;
+    width: 400px;
+
+    font-size: 3em;
+    border-bottom: 2px solid var(--font-color);
+}
+
+.diamond{
     position: absolute;
     left: 50%;
     top: 480px;
@@ -233,22 +246,13 @@ p, h1, h2, span, button, label, input[type='submit'] {
     transform: translateX(-50%);
 }
 
-.hipo i {
+.diamond i {
     font-size: 10em;
     color: var(--icon-color);
 }
 
-.hidden-hipo {
+.hidden-diamond {
     left: 180%;
-}
-
-.artigos-de-luxo h2 {
-    text-align: center;
-    margin: 0 auto 100px auto;
-    width: 400px;
-
-    font-size: 3em;
-    border-bottom: 2px solid var(--font-color);
 }
 
 .botoes-de-acao {
@@ -272,6 +276,16 @@ p, h1, h2, span, button, label, input[type='submit'] {
     padding: 10px;
 }
 
+.botoes-de-acao .btn-del {
+    position: relative;
+    left: -1300px;
+    transition: all 0.5s ease-in-out;
+}
+
+.botoes-de-acao .show-btn {
+    left: 0;
+}
+
 .botoes-de-acao button:hover {
     background-color: var(--hover-btn-color);
 }
@@ -282,19 +296,9 @@ p, h1, h2, span, button, label, input[type='submit'] {
     font-size: 19px;
 }
 
-.botoes-de-acao .btn-del {
-    position: relative;
-    left: -1300px;
-    transition: all 0.5s ease-in-out;
-}
-
 .botoes-de-acao .btn-del:active {
     background-color: rgb(235, 117, 117);
 
-}
-
-.botoes-de-acao .show-btn {
-    left: 0;
 }
 
 
@@ -302,10 +306,11 @@ p, h1, h2, span, button, label, input[type='submit'] {
 .container-form {
     position: relative;
     left: -1350px;
+
     display: flex;
     justify-content: center;
+
     padding-top: 30px;
-    /* padding: 30px 20px 0 20px; */
     transition: all 0.8s ease-in-out;
 }
 
@@ -407,7 +412,7 @@ footer p {
 }
 
 @media screen and (max-width: 810px) {
-    .stardust {
+    .star {
         left: 50%;  
         transform: translateX(-50%);  
     }
@@ -454,19 +459,13 @@ footer p {
     
 }
 
-@media screen and (max-width: 666px) {
-    .hipo {
+@media screen and (max-width: 667px) {
+    .diamond {
         top: 520px;
     }
 
-    .hipo i {
+    .diamond i {
         font-size: 15em;
-    }
-}
-
-@media screen and (max-width: 422px) {
-    .hipo {
-        top: 548px;
     }
 }
 
@@ -475,20 +474,26 @@ footer p {
         font-size: 5em;
     }
 
-    .stardust {
+    .star {
         left: 50%;    
     }
 
-    .artigos-de-luxo h2 {
-        text-align: center;
-        margin: 0 auto 100px auto;
+    .titulo-artigo {
         width: auto;
-    
+        margin: 0 auto 100px auto;
+        
+        text-align: center;
         font-size: 3em;
     }
     
-    .artigos-de-luxo h2:hover {
+    .titulo-artigo:hover {
         width: auto;
+    }
+}
+
+@media screen and (max-width: 422px) {
+    .diamond {
+        top: 548px;
     }
 }
 
@@ -497,7 +502,7 @@ footer p {
         font-size: 4em;
     }
 
-    .cabecalho .dica {
+    .cabecalho__dica {
         left: 0px;
     }
 }

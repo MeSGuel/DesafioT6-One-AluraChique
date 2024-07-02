@@ -1,5 +1,6 @@
 const tituloArtigo = document.getElementById('titulo-artigo');
 const cardsDeLuxoScroll = document.querySelectorAll('#cardchild');
+
 let myObservation = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {

@@ -1,16 +1,20 @@
-const estrela = document.getElementById('star');
-let contains = estrela.classList.contains('stardust--toggle');
+const stars = document.getElementById('star');
+let containClasseStar = stars.classList.contains('stardust--toggle');
 
-estrela.addEventListener('click', () => {
-    if(!contains) {
-        estrela.classList.remove('star--toggle');
-        estrela.classList.add('stardust--toggle');
+stars.addEventListener('click', e => spinStar(e))
+
+function spinStar(e) {
+    e.stopPropagation();
+
+    if(!containClasseStar) {
+        stars.classList.remove('star--toggle');
+        stars.classList.add('stardust--toggle');
         document.body.dataset.cenario = 'claro';
-        contains = estrela.classList.contains('stardust--toggle');;
+        containClasseStar = stars.classList.contains('stardust--toggle');;
     } else {
-        estrela.classList.remove('stardust--toggle');
-        estrela.classList.add('star--toggle');
+        stars.classList.remove('stardust--toggle');
+        stars.classList.add('star--toggle');
         document.body.dataset.cenario = 'escuro';
-        contains = estrela.classList.contains('stardust--toggle');;
+        containClasseStar = stars.classList.contains('stardust--toggle');;
     }
-})
+} 

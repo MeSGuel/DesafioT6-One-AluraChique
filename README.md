@@ -21,7 +21,7 @@ uma requisição "POST" será feita a uma API "FAKE". Os dados serão enviados e
 + Botão de troca de aparência - Do clarão do dia, para o escuro da noite.
 + Animações utilizando a API IntersectionObserver - que permitiu fazer elementos apareceram e sumirem de acordo com a posição da janela.
 + Animação de "Abri e Fecha" para os Artigos de Luxo - Ao passar o mouse(ou o dedo) por cima do artigo ele abrirá um pouco, se clicar(ou apertar) abrirá totalmente.
-+ Botão de "Delete" individual para cada Artigo de Luxo - No pc clicando com o botão direito, o botão de deletar será exibido ao usuário. No celular, basta segurar no artigo com o dedo.
++ Botão de "Delete" individual para cada Artigo de Luxo - Em um computador clicando com o botão direito, será exibido o botão de deletar para o usuário. Em um celular, basta segurar no artigo com o dedo.
 
 ## :dizzy: Tecnologias utilizadas
 

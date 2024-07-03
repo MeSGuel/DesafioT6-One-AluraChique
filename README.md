@@ -4,7 +4,7 @@ Este é um projeto desenvolvido para um desafio da One, o **Alura Geek** como in
 Foram semanas pra terminar esse projeto, não porque era difícil, mas sim porque eu tava meio perdido em relação ao design e features desse projeto. 
 Acabei pensando em muita coisa pra adicionar, mas no fim eu consegui... _Demorou ein_.
 
-Acesse o meu [Alura Chique](https://alura-chique.vercel.app/) atráves do Vercel. 
+Acesse o meu [Alura Chique](https://desafio-t6-one-alura-chique.vercel.app/ atráves do Vercel. 
 
 **Totalmente responsivo para Mobile 📱** ✔
 

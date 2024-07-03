@@ -33,7 +33,6 @@ uma requisição "POST" será feita a uma API "FAKE". Os dados serão enviados e
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/MockAPI-ff69b4?style=for-the-badge&logoColor=white" alt="MockAPI" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-  <img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub">
 </div>
 
 # Interface em computadores

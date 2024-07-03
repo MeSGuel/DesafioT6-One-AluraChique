@@ -345,6 +345,10 @@ p, h1, h2, span, button, label, input[type='submit'] {
     transition: 0.2s;
 }
 
+.inputs input[placeholder] {
+    color: #00000052;
+}
+
 .inputs label {
     font-size: 18px;
     line-height: 30px;

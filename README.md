@@ -4,7 +4,7 @@ Este é um projeto desenvolvido para um desafio da One, o **Alura Geek** como in
 Foram semanas pra terminar esse projeto, não porque era difícil, mas sim porque eu tava meio perdido em relação ao design e features desse projeto. 
 Acabei pensando em muita coisa pra adicionar, mas no fim eu consegui... _Demorou ein_.
 
-Acesse o meu [Alura Chique](https://desafio-t6-one-alura-chique.vercel.app/) atráves do Vercel. 
+Acesse o meu [Alura Chique](https://alura-chique.vercel.app/) atráves do Vercel. 
 
 **Totalmente responsivo para Mobile 📱** ✔
 
@@ -21,7 +21,7 @@ uma requisição "POST" será feita a uma API "FAKE". Os dados serão enviados e
 + Botão de troca de aparência - Do clarão do dia, para o escuro da noite.
 + Animações utilizando a API IntersectionObserver - que permitiu fazer elementos apareceram e sumirem de acordo com a posição da janela.
 + Animação de "Abri e Fecha" para os Artigos de Luxo - Ao passar o mouse(ou o dedo) por cima do artigo ele abrirá um pouco, se clicar(ou apertar) abrirá totalmente.
-+ Botão de "Delete" individual para cada Artigo de Luxo - Em um computador clicando com o botão direito, será exibido o botão de deletar para o usuário. Em um celular, basta segurar no artigo com o dedo.
++ Botão de "Delete" individual para cada Artigo de Luxo - No pc clicando com o botão direito, o botão de deletar será exibido ao usuário. No celular, basta segurar no artigo com o dedo.
 
 ## :dizzy: Tecnologias utilizadas
 
@@ -33,6 +33,7 @@ uma requisição "POST" será feita a uma API "FAKE". Os dados serão enviados e
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/MockAPI-ff69b4?style=for-the-badge&logoColor=white" alt="MockAPI" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+  <img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub">
 </div>
 
 # Interface em computadores
